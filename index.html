@@ -40,18 +40,18 @@
     ===========================================-->
 
     <header id="inicio">
-        <div class="movil hide-on-med-and-up">
+        <div class="movil hide-on-med-and-up hiddenitem" id="movil">
             <div class="fixed-action-btn">
                 <a href="#" data-target="menu-items" class="sidenav-trigger waves-effect btn-floating"><i class="material-icons">menu</i></a>
             </div>
         </div>
-        <div class="pc hide-on-small-and-down">
+        <div class="pc hide-on-small-and-down hiddenitem" id="pc">
             <div class="fixed-action-btn">
                 <a href="#" data-target="menu-items" class="sidenav-trigger waves-effect btn-floating"><i class="material-icons">menu</i></a>
             </div>
         </div>
         <!-- Menu items -->
-        <ul class="sidenav" id="menu-items">
+        <ul class="sidenav hiddenitem" id="menu-items">
             <li>
                 <div class="background">
                     <img src="images/logo-web.png" alt="Logo Web" class="responsive-img">
@@ -695,7 +695,7 @@
                                         <label for="mensaje">Mensaje</label>
                                     </div>
                                     <div class="center">
-                                        <input type="submit" class="btn waves-effect" value="Enviar">
+                                        <input type="submit" class="btn waves-effect" value="Enviar" onclick="carga();">
                                     </div>
                                 </div>
                             </form>
@@ -804,6 +804,15 @@
         window.onload = function(){
             $('#preloader').fadeOut();
             $('body').removeClass('hidden');
+            $('#movil').removeClass('hiddenitem');
+            $('#pc').removeClass('hiddenitem');
+            $('#menu-items').removeClass('hiddenitem');
+        }
+
+        // loader del Mensaje
+        function carga()
+        {
+            $('#form-loader').removeClass('is-hidden');
         }
     </script>
 
